@@ -100,7 +100,7 @@ button:active{transform:scale(0.95);}
 
 .no{
   background:#e7e2e4;
-  position:relative;
+  position:relative; /* START next to yes */
 }
 
 .hidden{display:none !important;}
@@ -179,14 +179,20 @@ const finalScreen = document.getElementById("finalScreen");
 
 let dodging=false;
 
+/* When first hovered or tapped, convert to floating and move */
 function moveNo(){
   if(!dodging){
     dodging=true;
+    const rect=noBtn.getBoundingClientRect();
     noBtn.style.position="fixed";
+    noBtn.style.left=rect.left+"px";
+    noBtn.style.top=rect.top+"px";
   }
-  const padding=16;
+
+  const padding=20;
   const maxX=window.innerWidth-noBtn.offsetWidth-padding;
   const maxY=window.innerHeight-noBtn.offsetHeight-padding;
+
   noBtn.style.left=Math.random()*maxX+"px";
   noBtn.style.top=Math.random()*maxY+"px";
 }
@@ -194,8 +200,8 @@ function moveNo(){
 noBtn.addEventListener("mouseenter",moveNo);
 noBtn.addEventListener("click",moveNo);
 
-/* DRAMATIC HEART BURST */
-function heartBurst(intensity=60){
+/* Dramatic heart burst */
+function heartBurst(intensity=70){
   for(let i=0;i<intensity;i++){
     const heart=document.createElement("div");
     heart.className="heart-bg";
@@ -209,7 +215,7 @@ function heartBurst(intensity=60){
 }
 
 yesBtn.addEventListener("click",()=>{
-  heartBurst(80);              // massive burst
+  heartBurst(80);
   card.style.transform="scale(0.9)";
   card.style.opacity="0";
 
@@ -219,7 +225,7 @@ yesBtn.addEventListener("click",()=>{
   },600);
 });
 
-/* Background floating hearts */
+/* Soft floating background hearts */
 function createHeart(){
   const heart=document.createElement("div");
   heart.className="heart-bg";
