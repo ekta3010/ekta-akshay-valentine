@@ -1,208 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Akshay 💖</title>
-  <style>
-    :root{
-      --pink:#e91e63;
-      --soft:#ffdde1;
-      --soft2:#ee9ca7;
-    }
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg, var(--soft), var(--soft2));
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      overflow:hidden;
-      color:#222;
-      padding:20px;
-    }
-    .card{
-      width:min(520px, 92vw);
-      background: rgba(255,255,255,0.92);
-      border-radius:24px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.18);
-      padding:26px;
-      text-align:center;
-      position:relative;
-      backdrop-filter: blur(6px);
-    }
-    h1{
-      margin:10px 0 6px;
-      color:var(--pink);
-      font-size:26px;
-      line-height:1.2;
-    }
-    p{margin:8px 0 14px; font-size:15px;}
-    .photo{
-      width: 140px;
-      height: 140px;
-      border-radius: 18px;
-      overflow:hidden;
-      margin: 0 auto 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      border: 3px solid rgba(233,30,99,0.25);
-    }
-    .photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .row{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-    button{
-      border:0;
-      padding:12px 18px;
-      border-radius:999px;
-      font-size:16px;
-      cursor:pointer;
-      transition: transform .15s ease, opacity .15s ease;
-      user-select:none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    button:active{ transform: scale(0.98); }
-    .yes{ background: var(--pink); color:#fff; }
-    .music{ background:#111; color:#fff; opacity:.92; }
-    .no{
-      background:#e8e8e8;
-      color:#333;
-      position: absolute; /* we’ll move it around */
-      left: 52%;
-      top: 78%;
-      transform: translate(-50%, -50%);
-    }
-    .hint{
-      font-size:13px;
-      opacity:.75;
-      margin-top:10px;
-    }
-    .hidden{ display:none !important; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Akshay ❤️</title>
 
-    /* Floating hearts */
-    .heart{
-      position:absolute;
-      font-size:22px;
-      animation: floatUp 4.2s linear forwards;
-      pointer-events:none;
-      opacity:0.95;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
-    }
-    @keyframes floatUp{
-      from{ transform: translateY(0) scale(1); opacity:1; }
-      to{ transform: translateY(-820px) scale(1.25); opacity:0; }
-    }
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f6e6ea, #e8c7d0); /* luxe blush */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    /* Fullscreen final */
-    .final{
-      position:fixed;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg, #fff, #ffe6f0);
-      text-align:center;
-      padding:24px;
-    }
-    .final .inner{
-      width:min(720px, 92vw);
-      background:white;
-      border-radius:26px;
-      padding:28px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.16);
-    }
-    .final h2{
-      color:var(--pink);
-      font-size:34px;
-      margin:0 0 6px;
-    }
-    .final h3{
-      margin:0 0 14px;
-      font-weight:600;
-    }
-    .final p{ font-size:16px; margin:0 0 14px; }
-  </style>
+  /* Floating hearts background */
+  .heart-bg {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); opacity: 0.8; }
+    to { transform: translateY(-110vh); opacity: 0; }
+  }
+
+  /* Card */
+  .card {
+    background: rgba(255,255,255,0.92);
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    border-radius: 26px;
+    box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+    position: relative;
+    backdrop-filter: blur(6px);
+  }
+
+  .photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+    border: 3px solid rgba(122, 12, 46, 0.18);
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    color: #7A0C2E; /* luxe wine */
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #2a2a2a;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 8px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active { transform: scale(0.98); }
+
+  .yes {
+    background-color: #7A0C2E; /* luxe wine */
+    color: white;
+  }
+
+  .no {
+    background-color: #e7e2e4;
+    position: absolute;
+    color: #333;
+  }
+
+  .hidden { display: none; }
+
+  /* Final screen */
+  .final {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #fff7f9, #f2d9df);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .final-box {
+    background: rgba(255,255,255,0.94);
+    padding: 34px;
+    border-radius: 26px;
+    box-shadow: 0 18px 60px rgba(0,0,0,0.16);
+    max-width: 520px;
+    width: 92vw;
+    backdrop-filter: blur(6px);
+  }
+
+  .final-box h2 {
+    color: #7A0C2E; /* luxe wine */
+    font-size: 28px;
+    margin: 0 0 14px 0;
+  }
+</style>
 </head>
 
 <body>
 
-  <audio id="bgm" loop>
-    <source src="song.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="card" id="card">
-    <div class="photo">
-      <img src="photo.jpeg" alt="Ekta & Akshay"/>
-    </div>
-
-    <h1 id="title">Akshay, will you be my Valentine? 💌</h1>
-    <p id="sub">From Ekta, with all my heart ❤️</p>
-
-    <div class="row">
-      <button class="music" id="musicBtn">Play music 🎶</button>
-      <button class="yes" id="yesBtn">Yes 💖</button>
-    </div>
-
-    <button class="no" id="noBtn">No 🙈</button>
-
-    <div class="hint" id="hint">Tip: Try clicking “No” 😅</div>
+<div class="card" id="card">
+  <div class="photo">
+    <!-- Upload your image as photo.jpg in the same repo -->
+    <img src="photo.jpg" alt="Ekta & Akshay">
   </div>
 
-  <div class="final hidden" id="finalScreen">
-    <div class="inner">
-      <h2>I love you, Akshay ❤️</h2>
-      <h3>Forever sounds perfect with you 💍</h3>
-      <p>Happy Valentine’s, my favorite person. Always you.</p>
-      <div class="row">
-        <button class="yes" id="moreHearts">More hearts 💖</button>
-      </div>
-    </div>
+  <h1>Akshay, will you be my Valentine? 💌</h1>
+  <p>From Ekta, with all my heart ❤️</p>
+
+  <button class="yes" id="yesBtn">Yes ❤️</button>
+  <button class="no" id="noBtn">No 🙈</button>
+</div>
+
+<div class="final hidden" id="finalScreen">
+  <div class="final-box">
+    <h2>I love you, Akshay ❤️</h2>
+    <p>
+      You’re my home, my calm, and my favorite part of every day.<br><br>
+      Life feels softer, steadier, and sweeter with you in it.<br>
+      I’m so grateful I get to call you my husband.<br><br>
+      Forever thankful it’s us.<br><br>
+      Always yours,<br>
+      Ekta 💖
+    </p>
   </div>
+</div>
 
 <script>
   const noBtn = document.getElementById("noBtn");
   const yesBtn = document.getElementById("yesBtn");
-  const musicBtn = document.getElementById("musicBtn");
-  const bgm = document.getElementById("bgm");
-
-  const title = document.getElementById("title");
-  const sub = document.getElementById("sub");
-  const hint = document.getElementById("hint");
-
   const card = document.getElementById("card");
   const finalScreen = document.getElementById("finalScreen");
-  const moreHearts = document.getElementById("moreHearts");
 
-  let stage = 1; // 1 = Valentine, 2 = Forever
-  let noMoves = 0;
+  // Place NO button initially (so it doesn't overlap on load)
+  function placeNoInitial() {
+    noBtn.style.left = "58%";
+    noBtn.style.top = "82%";
+  }
+  placeNoInitial();
 
-  // Music: must start after a user tap
-  musicBtn.addEventListener("click", async () => {
-    try {
-      await bgm.play();
-      musicBtn.textContent = "Music on ✅";
-      musicBtn.style.opacity = "0.85";
-    } catch (e) {
-      musicBtn.textContent = "Tap again 🎶";
-    }
-  });
-
-  // Move "No" around
-  function moveNoButton() {
-    noMoves++;
-
-    const padding = 20;
+  // Move NO button randomly (works for desktop hover + mobile tap)
+  function moveNo() {
+    const padding = 16;
     const btnW = noBtn.offsetWidth || 90;
     const btnH = noBtn.offsetHeight || 44;
 
@@ -214,56 +187,38 @@
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
-
-    // Make it progressively harder to click 😈
-    if (noMoves >= 3) noBtn.style.transform = "translate(-50%, -50%) scale(0.95)";
-    if (noMoves >= 6) noBtn.style.transform = "translate(-50%, -50%) scale(0.9)";
-    if (noMoves >= 9) noBtn.style.opacity = "0.85";
-
-    if (noMoves === 4) hint.textContent = "Akshay… be nice 😭";
-    if (noMoves === 7) hint.textContent = "Okay last chance…";
-    if (noMoves === 10) hint.textContent = "The universe wants you to say YES 💖";
   }
 
-  noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("click", moveNoButton); // for mobile taps
+  noBtn.addEventListener("mouseover", moveNo);
+  noBtn.addEventListener("click", moveNo);
 
-  // Hearts animation
-  function burstHearts(count = 18) {
-    for (let i=0; i<count; i++){
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.textContent = ["💖","💘","💕","💗","❤️"][Math.floor(Math.random()*5)];
-      heart.style.left = (Math.random() * window.innerWidth) + "px";
-      heart.style.bottom = "-10px";
-      heart.style.fontSize = (18 + Math.random() * 22) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 4500);
-    }
-  }
-
-  // YES flow: Valentine -> Forever -> Final I love you
+  // YES button → final screen
   yesBtn.addEventListener("click", () => {
-    burstHearts(22);
-
-    if (stage === 1) {
-      stage = 2;
-      title.textContent = "Okay… then will you be mine forever? 💍";
-      sub.textContent = "Like… no take-backs. Ekta + Akshay = always 🥹";
-      yesBtn.textContent = "Forever, yes 💞";
-      noBtn.textContent = "Not yet 😅";
-      hint.textContent = "Choose wisely, Mr. Sukhwani 😌";
-      noMoves = 0;
-      return;
-    }
-
-    // stage 2 -> final
     card.classList.add("hidden");
     finalScreen.classList.remove("hidden");
-    burstHearts(35);
   });
 
-  moreHearts.addEventListener("click", () => burstHearts(28));
+  // Floating hearts generator (lux red tone)
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart-bg");
+    heart.innerHTML = "❤️"; // red heart
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    heart.style.fontSize = (16 + Math.random() * 16) + "px";
+    heart.style.filter = "hue-rotate(-10deg) saturate(120%)"; // deeper luxe tone
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+  }
+
+  setInterval(createHeart, 450);
+
+  // Keep NO button reasonable after resize/orientation changes
+  window.addEventListener("resize", () => {
+    // if it's off-screen after resize, place it back near the card
+    placeNoInitial();
+  });
 </script>
 
 </body>
